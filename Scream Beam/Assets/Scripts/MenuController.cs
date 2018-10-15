@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour {
     [Header("Assigned Variables")]
@@ -17,6 +18,10 @@ public class MenuController : MonoBehaviour {
 	void Start () {
         DontDestroyOnLoad(this.gameObject);
 
+        Screen.autorotateToLandscapeLeft = true;
+
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+
         //menu startup
         BootMenu.gameObject.SetActive(true);
         NameMenu.gameObject.SetActive(false);
@@ -30,6 +35,12 @@ public class MenuController : MonoBehaviour {
         if(playerInputField.text != "" && SceneManager.GetActiveScene().name != SceneToLoad)
         {
             goButton.SetActive(true);
+        }
+
+        if(SceneManager.GetActiveScene().name == SceneToLoad)
+        {
+            GameObject nameText = GameObject.Find("NameText");
+            nameText.GetComponent<TextMeshProUGUI>().text = playerName;
         }
 
         if(BootMenu == null)
