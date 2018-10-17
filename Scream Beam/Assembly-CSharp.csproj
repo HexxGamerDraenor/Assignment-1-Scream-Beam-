@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\FireScript.cs" />
      <Compile Include="Assets\Scripts\MenuController.cs" />
      <Compile Include="Assets\Scripts\TouchInput.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Examples\2D Example\Player2DExample.cs" />
